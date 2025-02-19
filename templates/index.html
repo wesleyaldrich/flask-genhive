@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenHive Functional Prototype</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <form id="upload-form" method="post" action="/predict" enctype="multipart/form-data">
+        <h3>GenHive Simulator</h3>
+
+        <span id="file-chosen" hidden>No file chosen</span>
+        <input type="file" name="file" id="file">
+
+        <input id="submit-btn" type="submit" value="Submit">
+    </form>
+    <script>
+        const fileInput = document.getElementById('file');
+        const fileChosen = document.getElementById('file-chosen');
+
+        fileInput.addEventListener('change', function() {
+            fileChosen.textContent = this.files[0].name;
+        });
+    </script>
+</body>
+</html>
