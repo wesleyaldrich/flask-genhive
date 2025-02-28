@@ -28,7 +28,10 @@ def predict():
         file.save(file_path)
         print(f"Saving file to: {file_path}")
         
-        result = {"genre": genhive(file_path)}
+        result = {
+            "name": file.filename,
+            "genre": genhive(file_path)
+        }
         
         return jsonify(result)
 
