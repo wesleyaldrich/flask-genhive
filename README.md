@@ -1,6 +1,11 @@
 # Start Guide
 
-Run the app by doing:
+## Install dependencies by doing:
+```
+pip install requirements.txt
+```
+
+## Run the app by doing:
 ```
 python predict.py
 ```
