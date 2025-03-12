@@ -27,10 +27,13 @@ def predict():
         file_path = os.path.join(UPLOAD_FOLDER, file.filename)
         file.save(file_path)
         print(f"Saving file to: {file_path}")
+
+        response_1, response_2 = genhive(file_path)
         
         result = {
             "name": file.filename,
-            "genre": genhive(file_path)
+            "genre": response_1,
+            "percentages": response_2
         }
         
         return jsonify(result)
